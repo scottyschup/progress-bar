@@ -22,7 +22,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        transition: width 1.5s;
+        transition: width .15s;
       }
       .percentage {
         color: #fff;
@@ -32,7 +32,7 @@
         opacity: .4;
         position: absolute;
         right: -20px;
-        transition: all 1.5s;
+        transition: all 1.2s;
       }
       .flash {
         opacity: .9;
@@ -54,8 +54,8 @@
           pBar.style.width = perc + '%';
           percP.innerHTML = perc + '%';
           percP.classList.toggle('flash');
-          perc = (perc + 10) % 110;
-        }, 1000);
+          perc = (perc + 1) % 101;
+        }, 100);
       }());
     </script>
   </body>
