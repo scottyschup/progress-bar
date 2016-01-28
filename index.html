@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+      }
+      .progress-bar {
+        width: 80%;
+        position: absolute;
+        top: calc(100vh / 2);
+        left: 10%;
+      }
+      .progress {
+        background: linear-gradient(#55f, #114);
+        border-radius: 25px;
+        height: 50px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: width 1.5s;
+      }
+      .percentage {
+        color: #fff;
+        font-size: 200%;
+        margin: 10px auto;
+        width: 0;
+        opacity: .4;
+        position: absolute;
+        right: -20px;
+        transition: all 1.5s;
+      }
+      .flash {
+        opacity: .9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress-bar">
+      <div class="progress">
+        <p class="percentage"></p>
+      </div>
+    </div>
+    <script type="text/javascript">
+      (function () {
+        var pBar = document.getElementsByClassName('progress')[0];
+        var percP = document.getElementsByClassName('percentage')[0];
+        var perc = 0;
+        setInterval(function () {
+          pBar.style.width = perc + '%';
+          percP.innerHTML = perc + '%';
+          percP.classList.toggle('flash');
+          perc = (perc + 10) % 110;
+        }, 1000);
+      }());
+    </script>
+  </body>
+</html>
